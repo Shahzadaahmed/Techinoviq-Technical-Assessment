@@ -23,7 +23,7 @@ const MyPokemonList = () => {
         <Container size="lg" py="xl">
 
             {
-                userPokemonsList?.filter((user) => { return user.teamName == activeUser }) &&
+                userPokemonsList?.filter((user) => { return user.teamName == activeUser }).length > 0 &&
                 <TeamOverviewStats pokiStatsData={userPokemonsList?.filter((user) => { return user.teamName == activeUser })} />
             }
 

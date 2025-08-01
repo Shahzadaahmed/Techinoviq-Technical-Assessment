@@ -2,6 +2,7 @@
   "name": "techinoviq-assesment",
   "version": "0.1.0",
   "private": true,
+  "author": "Shahzada Muhammad Ahmed",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

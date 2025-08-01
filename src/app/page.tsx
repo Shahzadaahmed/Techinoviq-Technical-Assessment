@@ -1,9 +1,4 @@
 // Note: App page (Main entry point)...!
 
-const App = () => {
-  return (
-    <h1> Main Screen! </h1>
-  );
-};
-
+const App = () => { return (null); }
 export default App;

@@ -10,6 +10,7 @@ Completed in: 6 hours max.
 
 Don't have a time to implement below features beause of too much office work load.
 1: Loading implementation.
+2: Data not found implementation.
 2: Team deletion.
 3: Proper validation.
 4: Base experience value is hard coded not coming from an api.

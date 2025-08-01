@@ -25,7 +25,7 @@ const SelectTeamList = () => {
     const { usersTeam, userPokemonsList } = useAppSelector(({ appStates }) => appStates);
 
     const handleSelect = (teamName: string) => {
-        // console.log('Team name: ', teamName);
+        // // console.log('Team name: ', teamName);
         teamName && dispatch(selectAPokemonTeam(teamName));
     };
 

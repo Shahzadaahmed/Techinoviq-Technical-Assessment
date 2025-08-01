@@ -1,12 +1,12 @@
 'use client';
 
-import React , { FC } from 'react';
+import React, { FC, memo } from 'react';
 import { Card, Text, Title, Group, Stack, Badge, Divider } from '@mantine/core';
 import { IconFlame, IconStar } from '@tabler/icons-react';
 import { StatsOverviewProps } from '@/types/global-types';
 
 const TeamOverviewStats: FC<StatsOverviewProps> = ({ pokiStatsData }) => {
-    console.log('Props: ', pokiStatsData);
+    // console.log('Props: ', pokiStatsData);
 
     const experience = 50;
     const allTypes = pokiStatsData.flatMap((pokemon) => pokemon.types);
@@ -58,4 +58,4 @@ const TeamOverviewStats: FC<StatsOverviewProps> = ({ pokiStatsData }) => {
     );
 };
 
-export default TeamOverviewStats;
+export default memo(TeamOverviewStats);

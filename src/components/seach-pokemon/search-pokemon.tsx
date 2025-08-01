@@ -7,7 +7,7 @@ import { SearchPokemonProps } from '@/types/global-types';
 
 const SearchPokemon = (props: SearchPokemonProps) => {
     const { search, setSearch } = props;
-    // console.log("Search Props: ", props);
+    // // console.log("Search Props: ", props);
 
     return (
         <TextInput

@@ -18,7 +18,7 @@ const fetchAllpokemons = createAsyncThunk(
         try {
             const response = await fetch("/api/pokemon-list");
             const pokemonData = await response.json();
-            // console.log("Pokemon Api Response: ", pokemonData);
+            // // console.log("Pokemon Api Response: ", pokemonData);
 
             if (pokemonData && pokemonData.length > 0) {
                 dispatch(FETCH_ALL_POKEMONS(pokemonData));
@@ -26,7 +26,7 @@ const fetchAllpokemons = createAsyncThunk(
         }
 
         catch (error: any) {
-            console.log('Something went wrong while fetching pokemons: ', error);
+            // console.log('Something went wrong while fetching pokemons: ', error);
         };
     }
 );
@@ -35,7 +35,7 @@ const fetchAllpokemons = createAsyncThunk(
 const makeAPokemonTeam = createAsyncThunk(
     "app/makeAPokemonTeam",
     async (pokemonTeamData: MakeATeamProps, { dispatch }) => {
-        // console.log("Pokemon team data: ", pokemonTeamData);
+        // // console.log("Pokemon team data: ", pokemonTeamData);
         dispatch(MAKE_A_TEAM(pokemonTeamData));
     }
 );
@@ -44,7 +44,7 @@ const makeAPokemonTeam = createAsyncThunk(
 const selectAPokemonTeam = createAsyncThunk(
     "app/selectAPokemonTeam",
     async (teamName: string, { dispatch }) => {
-        // console.log('Team name: ', teamName);
+        // // console.log('Team name: ', teamName);
         dispatch(SELECT_A_TEAM(teamName));
     }
 );
@@ -53,7 +53,7 @@ const selectAPokemonTeam = createAsyncThunk(
 const addPokemonToTheTeam = createAsyncThunk(
     "app/addPokemonToTheTeam",
     async (pokemonData: AddPokemonToTheTeam, { dispatch }) => {
-        // console.log('Pokemon data: ', pokemonData);
+        // // console.log('Pokemon data: ', pokemonData);
         dispatch(ADD_POKEMON_TO_THE_TEAM(pokemonData));
     }
 );
@@ -62,7 +62,7 @@ const addPokemonToTheTeam = createAsyncThunk(
 const removePokemonFromTheTeam = createAsyncThunk(
     "app/removePokemonFromTheTeam",
     async ( pokemonName : string, { dispatch }) => {
-        // console.log('Pokemon name: ', pokemonName);
+        // // console.log('Pokemon name: ', pokemonName);
         dispatch(REMOVE_POKEMON_FROM_THE_TEAM(pokemonName));
     }
 );

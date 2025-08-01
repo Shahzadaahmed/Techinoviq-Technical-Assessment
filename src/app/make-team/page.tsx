@@ -34,7 +34,7 @@ const MakeATeam = () => {
             teamDescription: teamDescription
         };
 
-        // console.log('Saving Team:', teamData);
+        // // console.log('Saving Team:', teamData);
         teamData && dispatch(makeAPokemonTeam(teamData)).finally(() => {
             setTeamName("");
             setTeamDescription("");

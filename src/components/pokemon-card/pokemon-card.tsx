@@ -12,7 +12,7 @@ import { PokemonCardProps } from '@/types/global-types';
 
 const PokemonCard = (props: PokemonCardProps) => {
     const { screenName, name, image, types } = props;
-    // console.log("Props: ", props);
+    // // console.log("Props: ", props);
 
     // Note: handeling redux here...!
     const dispatch = useAppDispatch();
@@ -20,7 +20,7 @@ const PokemonCard = (props: PokemonCardProps) => {
 
     // Note: Function to adding a Pokémon to the team (if needed)
     const handleAddPokemon = (pokemonName: string) => {
-        // console.log("Seleced pokemon: ", pokemonName);
+        // // console.log("Seleced pokemon: ", pokemonName);
 
         const isTeamSelected = usersTeam.find((item) => { return item.isTeamSelected });
         const getPokemonDetails = allPokemonsList.find((item) => { return item.name == pokemonName });
@@ -48,7 +48,7 @@ const PokemonCard = (props: PokemonCardProps) => {
         catch (error) {
             if (error) {
                 const errMessage = error as string
-                console.log("Error: ", errMessage);
+                // console.log("Error: ", errMessage);
                 showNotificationToast("Error", errMessage, "red");
             };
         };

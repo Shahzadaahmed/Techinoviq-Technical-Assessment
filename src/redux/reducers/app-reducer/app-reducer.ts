@@ -15,12 +15,12 @@ const appSlice = createSlice({
     initialState,
     reducers: {
         FETCH_ALL_POKEMONS: (state, action: PayloadAction<any>) => {
-            // console.log("All pokemon list in app reducer: ", action.payload);
+            // // console.log("All pokemon list in app reducer: ", action.payload);
             state.allPokemonsList = action.payload;
         },
 
         MAKE_A_TEAM: (state, action: PayloadAction<any>) => {
-            // console.log("User pokemon team: ", action.payload);
+            // // console.log("User pokemon team: ", action.payload);
 
             const fetchAllUserPokemonsTeam = [...state.usersTeam];
             fetchAllUserPokemonsTeam.push(action.payload);
@@ -28,11 +28,11 @@ const appSlice = createSlice({
         },
 
         SELECT_A_TEAM: (state, action: PayloadAction<any>) => {
-            // console.log("Target team: ", action.payload);
+            // // console.log("Target team: ", action.payload);
 
             const fetchAllUserPokemonsTeam = [...state.usersTeam];
             const findIndex = fetchAllUserPokemonsTeam.findIndex((item) => { return item.teamName == action.payload });
-            // console.log('Target index: ', findIndex);
+            // // console.log('Target index: ', findIndex);
 
             for (let i = 0; i < fetchAllUserPokemonsTeam.length; i++) {
                 fetchAllUserPokemonsTeam[i].isTeamSelected = false;
@@ -42,7 +42,7 @@ const appSlice = createSlice({
         },
 
         ADD_POKEMON_TO_THE_TEAM: (state, action: PayloadAction<any>) => {
-            // console.log('Pokemon data: ', action.payload);
+            // // console.log('Pokemon data: ', action.payload);
 
             const fetchUserPokemonsList = [...state.userPokemonsList];
             fetchUserPokemonsList.push(action.payload);
@@ -50,7 +50,7 @@ const appSlice = createSlice({
         },
 
         REMOVE_POKEMON_FROM_THE_TEAM: (state, action: PayloadAction<any>) => {
-            console.log('Pokemon name: ', action.payload);
+            // console.log('Pokemon name: ', action.payload);
 
             const fetchUserPokemonsList = [...state.userPokemonsList];
             const findIndex = [...state.userPokemonsList].findIndex((item) => { return item.pokemonName == action.payload });

@@ -3,9 +3,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { SimpleGrid, Container, Group, Text } from '@mantine/core';
-import Image from "next/image";
-import { useAppDispatch, useAppSelector } from "@/redux/store";
+import { SimpleGrid, Container } from '@mantine/core';
+import { useAppSelector } from "@/redux/store";
 import PokemonCard from "@/components/pokemon-card/pokemon-card";
 import TeamOverviewStats from "@/components/team-stats/teams-stats";
 
@@ -14,18 +13,20 @@ const MyPokemonList = () => {
     // Note: Handeling states here...!
     const [loading, setLoading] = useState<boolean>(false);
 
-    // Note: handeling redux here...!
-    const dispatch = useAppDispatch();
-
     // Note: Getting all pokemons data from redux...!
     const { userPokemonsList, usersTeam } = useAppSelector(({ appStates }) => appStates);
     const activeUser = usersTeam.find((userItem) => { return userItem.isTeamSelected })?.teamName;
-    console.log("Active user: ", activeUser);
+    // console.log("Active user: ", activeUser);
+    // console.log("My pokemons list: ", userPokemonsList);
 
     return (
         <Container size="lg" py="xl">
 
-            <TeamOverviewStats pokiStatsData={userPokemonsList?.filter((user) => { return user.teamName == activeUser })} />
+            {
+                userPokemonsList?.filter((user) => { return user.teamName == activeUser }) &&
+                <TeamOverviewStats pokiStatsData={userPokemonsList?.filter((user) => { return user.teamName == activeUser })} />
+            }
+
 
             <SimpleGrid
                 cols={{ base: 1, sm: 2, md: 3, lg: 4 }}

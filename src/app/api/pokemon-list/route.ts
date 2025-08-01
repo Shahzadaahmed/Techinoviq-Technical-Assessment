@@ -11,7 +11,7 @@ const GET = async () => {
     // Note: Fetching the Pokemon list from PokeAPI...!
     const pokemonList = await fetch(apiUrl);
     const listData = await pokemonList.json();
-    // console.log("Fetched Pokemon List:", listData);
+    // // console.log("Fetched Pokemon List:", listData);
 
     const fullData = await Promise.all(
         listData.results.map(async (pokemon: any) => {
